@@ -44,7 +44,9 @@ document.getElementById("playButton").addEventListener("click", function () {
         { line: "Si apagar el sol para encender tu amanecer", time: 3350 },
         { line: "Falar en portugués, aprender a hablar francés", time: 3580 },
         { line: "O bajar la luna hasta tus pies", time: 2420 },
-        { line: "", time: 100 },
+        { line: "", time: 3000 },
+
+        { line: "Te amo mucho Karina :)", time: 5090 },
     ];
 
     let index = 0;
