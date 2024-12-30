@@ -1,0 +1,141 @@
+/* Estilo global */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex; /* Usamos flexbox para alinear el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100%; /* Asegura que el contenedor ocupe el 100% de la pantalla */
+    width: 100%;
+}
+
+/* Botón personalizado */
+.custom-button {
+    background-color: #d93215;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.custom-button:hover {
+    transform: scale(1.1);
+    background-color: #b12108;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.custom-button:active {
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de letras */
+.lyrics {
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.8;
+    width: 100%;
+    margin: 0 auto;
+    height: 90vh;
+    overflow-y: hidden;
+    padding: 20px;
+    position: relative; /* Para posicionar las imágenes dentro */
+}
+
+/* Contenedor de imágenes a la izquierda y derecha */
+.image-container {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1; /* Las imágenes estarán detrás del texto */
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.image-container img {
+    width: 70%; /* Ajustar el tamaño de las imágenes dentro del contenedor */
+    border-radius: 15%;
+    height: auto;
+}
+
+/* Animación de letras deslizándose desde la izquierda, derecha o abajo */
+.lyrics p {
+    margin: 100px 0;
+    font-size: 35px;
+    opacity: 0;
+    animation: slideIn 1.5s forwards;
+}
+
+/* Animación de deslizamiento con rebote */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(80px) translateX(-90px); /* Comienza fuera de la pantalla */
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-30px) translateX(20px); /* Posición de medio movimiento */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0); /* Posición final */
+    }
+}
+
+/* Efecto de corazón */
+#hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Asegura que no interfiera con otros elementos */
+}
+
+.heart {
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    animation: heartAnimation 2s ease-in-out infinite;
+}
+
+@keyframes heartAnimation {
+    0% {
+        opacity: 1;
+        transform: scale(0) translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) translateY(-150px); /* Se eleva */
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) translateY(-300px); /* Desaparece */
+    }
+}
